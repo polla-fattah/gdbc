@@ -1,0 +1,12 @@
+.classpath
+.project
+.settings/
+ProgramerRefrences/
+*~
+updatesvn
+trunk/
+war/
+!war/php
+!war/Gwtphp.css
+!war/Gwtphp.html
+test/
