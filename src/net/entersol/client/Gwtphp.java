@@ -57,8 +57,8 @@ public class Gwtphp implements EntryPoint {
 		private Button button = new Button("Start");
 		public void onModuleLoad(){
 			panel.add(button);
-			IOGate iog = new IOGate("http://localhost/gdbc/php/index.php");
-			final Gdbc gdbc = new Gdbc(iog, "DB1");
+			IOGate iog = new IOGate("http://localhost/gdbc/php/index.php", "polla", "tano");
+			final Gdbc gdbc = new Gdbc(iog, Gdbc.DEFAULT_DB);
 
 			
 			final SqlStatment stmt = new SqlStatment(SqlStatment.INDIRECT) {

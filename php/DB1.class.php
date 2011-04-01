@@ -39,6 +39,9 @@ class DB1{
 
 		public $DB_NAME = "quality";					//The main database for this application
 
+		public $AUTH_TABLE = "users";					//The table that used for authenticating
+														//users for this Apps
+
 		public $GDBC_DBS = Array(						//This Array contains all queries for this database
 			"q1" => "Select * from #idf; where #eqs;",
 			"q2" => "insert into Staff (`name`,`degree`,Department_idDepartment) values ('Demo1', 'Msc', '1')",

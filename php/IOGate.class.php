@@ -57,6 +57,8 @@ class IOGate{
 		if(System::PRODUCTION_MODE)
 			ob_start();
 		self::$appsdb = System::getAppeDB();
+
+
 	}
 	/**
 	 * This destructor flushes the buffer of output and then sends just the $out or $err variable if there is error
@@ -134,7 +136,11 @@ class IOGate{
 	}
 	//checks the user existence
 	private function authenticate($user, $pass){
-		$rows = self::$appsdb->query("select * from " . System::AUTH_TABLE . " where userId='$useer' and password = '$pass'");
+		$defaultDb = System::$defaultDatabase;
+		$fail = false;
+		$rows = self::$appsdb->query("select * from " . $defaultDb->AUTH_TABLE . " where idUsers='$user' and password = '$pass'") or $fail = true;
+		if ($fail)
+			IOGate::reportError("select * from " . $defaultDb->AUTH_TABLE . " where userId='$user' and password = '$pass'");
 		if( $rows->rowCount() < 1 )
 			return false;
 		else

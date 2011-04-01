@@ -33,20 +33,8 @@
  */
 	class System {
 
-		const DBMS = "mysql";							//Type of database used
-
-		const DB_SERVER = "localhost";					//Path to the database server
-
-		const DB_USER = "root";							//databse user for this application
-
-		const DB_PASS = "tano";						//password for user
-
-		const DB_NAME = "entersolapps";					//The main database for this application
-
-		const AUTH_TABLE = "users";						//The table that used for authenticating
-														//users for this Apps
-
-		private static $appsdb = null;					//Genaral DB for the Application
+		public static $defaultDatabase = null;
+		public static $appsdb = null;					//Genaral DB for the Application
 
 		/**
 		 * This function can be used to return system database and creates a connection to the default
@@ -54,8 +42,10 @@
 		 */
 		static function getAppeDB(){
 			if(self::$appsdb == null){
+				self::$defaultDatabase = new DB1();
+				$db = self::$defaultDatabase;
 				try{
-					self::$appsdb = new PDO(self::DBMS . ":host=" . self::DB_SERVER . ";dbname=" . self::DB_NAME, self::DB_USER, self::DB_PASS);
+					self::$appsdb = new PDO($db->DBMS . ":host=" . $db->DB_SERVER . ";dbname=" . $db->DB_NAME, $db->DB_USER, $db->DB_PASS);
 				}
 				catch( PDOException $e ){
 					IOGate::reportError("Error While trying to connect to the main database\n" . $e->getMessage());

@@ -81,7 +81,7 @@
 		 */
 		private function connect($data){
 			if ($data[Gdbc::DB] == Gdbc::DEFAULT_DB){
-				$this->database = Gdbc::DEFAULT_DB;
+				$this->database = System::$defaultDatabase;
 				$this->dbPointer = IOGate::$appsdb;
 			}
 			else{
