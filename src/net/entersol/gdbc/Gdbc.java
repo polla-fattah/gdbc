@@ -43,8 +43,11 @@ import net.entersol.iogate.IOGateException;
 import net.entersol.iogate.IOResponce;
 import net.entersol.iogate.IOService;
 /**
+ * <p>
  * This class is directly responsible of sending queries to the server via an {@link IOGate} and  
  * Receiving results from server as json object request object has this format
+ * </p>
+ * <pre>
  * {
  * 	db: String //database name,
  * 	index: integer // index of transaction,
@@ -64,8 +67,9 @@ import net.entersol.iogate.IOService;
  * 						}
  * 			]
  * }
- * 
- * Received object has this format 
+ * </pre>
+ * <p>Received object has this format</p>
+ * <pre> 
  * {
  * 	db: String //database name,
  * 	index: integer // index of transaction,
@@ -97,6 +101,7 @@ import net.entersol.iogate.IOService;
   * 						}
  * 			]
  * }
+ * </pre>
  */
 public class Gdbc implements IOResponce {
 	//These are keys to send values with to the server 

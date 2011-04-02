@@ -32,16 +32,21 @@ package net.entersol.gdbc;
 import org.itemscript.core.values.JsonArray;
 import org.itemscript.core.values.JsonObject;
 /**
+ * <p>
  * The respond from the PHP server for SQL queries are passed to this class it 
  * contains results for all kind of Queries but it behaves differently for queries
  *  that suppose to retrieve data and others that manipulate it.  
- *  
- *  The JSON format that expected for this class is exactly Like this: 
+ *  </P>
+ *  <p>
+ *  The JSON format that expected for this class is exactly Like this:
+ *  <p>
+ *  <pre> 
  *   sql:{
  *  	results : [1st Row, 2nd Row],
  *  	lastInsertId : an integer or null,
  *  	rowCount: an integer
  *	  }
+ *	<pre>
  */
 public class ResultSet {
 	private JsonObject jsonData;	// The data that comes from server

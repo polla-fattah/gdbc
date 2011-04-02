@@ -33,28 +33,36 @@ import net.entersol.iogate.IOGate;
 
 import org.itemscript.core.values.JsonObject;
 /**
+ * <p>
  * This class creates sql statements that is ready to be sent by {@link Gdbc} the queries are two types:
  * direct and indirect direct query is simple, it just send plain sql from client to server,
  * indirect queries are queries saved in the server as array the client just send index and complementary arguments
- * 
+ * </P>
+ * <p>
  * The format of the sending string is like that "index#col; [complementary#col;]*"  
- * while complementary can be
- * a- single field; example  name
- * b- multi fields;  example name1#com; name2#com; name3
- * c- single value; example value
- * d- multi values; value#com; 'value'#com; value
- * e- single equation; example 1) name #eql; value 2) name #gte; 'value'
- * f- multi equations; example 1) `name` #nql; value #and; `name2` #nql; 'value1'  
+ * while complementary can be </p>
+ * <ol>
+ * <li> single field; example  name
+ * <li> multi fields;  example name1#com; name2#com; name3
+ * <li> single value; example value
+ * <li> multi values; value#com; 'value'#com; value
+ * <li> single equation; example 1) name #eql; value 2) name #gte; 'value'
+ * <li> multi equations; example 1) `name` #nql; value #and; `name2` #nql; 'value1'  
  * 		2) field #gth; 'val' #and; #not; #opr; field #gte; 33 #cpr;
- * 
+ * </ol>
+ * <p>
  * for using these operators you can use available public fields of this class
  *  they should be in this format for security reasons
- *  
+ *  </p>
+ *  <p>
  *  This class sends an object of Json to the {@link Gdbc} in this format 
+ *  </p>
+ *  <pre>
  *  {
  *  	method: string , //direct or indirect
  *  	sql: string // the sql statement 
  *  }
+ *  </pre>
  */
 public abstract class SqlStatment {
 	/** This mode directly insert sql statements from client	 */
@@ -172,11 +180,12 @@ public abstract class SqlStatment {
 	/**
 	 * Called when the service failed to return successfully
 	 * This method is called if there is a problem occurred to the service; problems like:
-	 *  1- disconnection of network
-	 *  2- wrong service call
-	 *  3- unauthorized call
-	 *  4- problems inside service itself
-	 *  
+	 * <ol>
+	 *  <li> disconnection of network
+	 *  <li> wrong service call
+	 *  <li> unauthorized call
+	 *  <li> problems inside service itself
+	 *  </ol>
 	 * @param ioge is an exception that provided by the connecter class to the caller class to identify problem type
 	 */
 	public abstract void onQueryFailure(SqlException sqlex);

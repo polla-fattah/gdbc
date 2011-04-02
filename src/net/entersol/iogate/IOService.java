@@ -33,12 +33,14 @@ import org.itemscript.core.gwt.GwtSystem;
 import org.itemscript.core.values.JsonObject;
 
 /**
- * This class creates an abstraction layer upon IOGate connection this class aims specific
- * to the services not to the server. the service can be in the form of:
- * 1- Class in a file
- * 2- Class in a file and needs include to other file service
- * 3- Function with a single JSON parameter; inside a file that its required for this function
- * 4- A file that just needs an include to work
+ * <p>This class creates an abstraction layer upon IOGate connection this class aims specific
+ * to the services not to the server. the service can be in the form of:</P>
+ * <ol>
+ * <li> Class in a file
+ * <li> Class in a file and needs include to other file service
+ * <li> Function with a single JSON parameter; inside a file that its required for this function
+ * <li> A file that just needs an include to work
+ * </ol>
  * @see IOGate
  * @author Polla A. Fattah <br/><a href="mailto:polla@enterhosts.com">polla@enterhosts.com</a>
  */

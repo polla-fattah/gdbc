@@ -43,14 +43,15 @@ import com.google.gwt.http.client.URL;
 import com.google.gwt.http.client.RequestBuilder.Method;
 
 /**
+ * <p>
  * This class gives a standard gate to the GWT to communicate with the server it uses built in classes to communicate 
- * over HTTP(S) and wraps them with nicer interface.
- * This class supports communication between client and server using JSON to communicate  data, status, and control messages  
- * With this class get and post requests can be made.
- * Also its possible to have public or private messages which means by public is anonymous persons and with private
- * Authorized user by name and password.
- * It is also possible to encrypt data that should be sent across the communication but it is recommended to use 
- * HTTPS if it is possible because it is faster, cleaner and more standardized 
+ * over HTTP(S) and wraps them with nicer interface.</p>
+ * <p>This class supports communication between client and server using JSON to communicate  data, status, and control messages  
+ * With this class get and post requests can be made.</p>
+ * <p>Also its possible to have public or private messages which means by public is anonymous persons and with private
+ * Authorized user by name and password.</p>
+ * <p>It is also possible to encrypt data that should be sent across the communication but it is recommended to use 
+ * HTTPS if it is possible because it is faster, cleaner and more standardized </p>
  * @author Polla A. Fattah <br/><a href="mailto:polla@enterhosts.com">polla@enterhosts.com</a>
  */
 public class IOGate{

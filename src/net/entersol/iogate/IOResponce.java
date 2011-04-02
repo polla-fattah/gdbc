@@ -45,13 +45,14 @@ public interface IOResponce {
 
 	public void onCallBackSuccess(JsonValue message);
 	/**
-	 * Called when the service failed to return successfully
+	 * Called when the service failed to return successfully<br>
 	 * This method is called if there is a problem occurred to the service; problems like:
-	 *  1- disconnection of network
-	 *  2- wrong service call
-	 *  3- unauthorized call
-	 *  4- problems inside service itself
-	 *  
+	 * <ol>
+	 *  <li> disconnection of network
+	 *  <li> wrong service call
+	 *  <li> unauthorized call
+	 *  <li> problems inside service itself
+	 *  </ol>
 	 * @param ioge is an exception that provided by the connecter class to the caller class to identify problem type
 	 */
 	public void onCallBackFailure(IOGateException ioge);
